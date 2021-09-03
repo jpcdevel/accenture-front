@@ -1,0 +1,138 @@
+@font-face {
+  font-family: TTCommons-Medium;
+  src: url('../fonts/TTCommons/TTCommons-Medium.ttf');
+}
+
+@font-face {
+  font-family: TTCommons-Demibold;
+  src: url('../fonts/TTCommons/TTCommons-DemiBold.ttf');
+}
+
+@font-face {
+  font-family: TTCommons-Regular;
+  src: url('../fonts/TTCommons/TTCommons-Regular.ttf');
+}
+
+@font-face {
+  font-family: TTCommons-Light;
+  src: url('../fonts/TTCommons/TTCommons-Light.ttf');
+}
+
+body {
+  background: #F0F0F0;
+}
+
+h1, h2, h3, h4, h5, h6, b, button {
+  font-family: TTCommons-Demibold;
+}
+
+p, a, b {
+  font-family: TTCommons-Regular;
+  font-size: 16px;
+}
+
+p, h1, h2, h3, b, a {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 30px;
+}
+
+h2 {
+  font-size: 23px
+}
+
+h3 {
+  font-size: 20px;
+}
+
+input::placeholder, textarea::placeholder {
+  font-size: 20px;
+  font-family: TTCommons-Light;
+}
+
+.menuLinks {
+  font-family: TTCommons-Demibold;
+  color: white;
+  text-decoration: none;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.menuLinks:first-child {
+  margin-left: 0;
+}
+
+.menuLinks:hover {
+  color: white;
+}
+
+.mainContainer {
+  width: 100%;
+  padding-left: 260px;
+  padding-right: 260px;
+}
+
+.mainNav {
+  height: 70px;
+  background: #151630;
+  display: flex;
+  align-items: center;
+  color: white;
+  justify-content: space-between;
+}
+
+.circle {
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border-radius: 50%;
+  margin-left: 15px;
+}
+
+.mainDash {
+  margin-top: 20px;
+  width: 100%;
+}
+
+.portfolio {
+  display: flex;
+  align-items: center;
+  overflow-x: scroll;
+  max-width: 100%;
+}
+
+.addPortfolio {
+  width: 25px;
+  height: 25px;
+  background: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  padding-top: 2px;
+  cursor: pointer;
+}
+
+.portfolios {
+  display: flex;
+}
+
+.portfolioItemChoose {
+  margin-left: 20px;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.activeWhite {
+  background: #fff;
+}
+
+.portfolioItemChoose:hover {
+  background: #fff;
+}
