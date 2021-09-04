@@ -2,12 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37783765-e803-4636-bfbf-5f07bea64fe1" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/Portfolio.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Recommendation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Stock.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GraphQL/Queries/getAllProtfolios.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/GraphQL/Queries/getPortfolioById.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Loader.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/static/images/caseImg1.svg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MainDash.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MainDash.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Navbar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Portfolio.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Portfolio.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/PortfolioItemChoose.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/PortfolioItemChoose.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/static/css/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/css/App.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/static/images/caseImg.svg" beforeDir="false" afterPath="$PROJECT_DIR$/src/static/images/caseImg.svg" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1630689333888</updated>
-      <workItem from="1630689335123" duration="9129000" />
+      <workItem from="1630689335123" duration="14383000" />
     </task>
     <servers />
   </component>

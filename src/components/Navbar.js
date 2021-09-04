@@ -6,7 +6,7 @@ function Navbar () {
             <div>
                 <a className="menuLinks">Главная</a>
                 <a className="menuLinks">Котировки</a>
-                <a className="menuLinks">Отчёты </a>
+                <a className="menuLinks">Отчёты</a>
                 <a className="menuLinks">История</a>
             </div>
             <div style={{display: 'flex', alignItems: 'center'}}>
