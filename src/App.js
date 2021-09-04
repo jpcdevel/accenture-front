@@ -17,6 +17,8 @@ import MainDash from './components/MainDash'
 import ScrollToTop from "./utils/ScrollToTop";
 import './static/css/App.css'
 import Loader from './components/Loader'
+import Report from "./components/Report";
+import TestControl from "./components/TestControl";
 
 export const PortfolioContext = React.createContext({})
 
@@ -68,6 +70,7 @@ function App() {
           <ScrollToTop />
           <Switch>
             <Route exact path="/"><MainDash /></Route>
+            <Route exact path="/report"><Report /></Route>
           </Switch>
         </div>
       </PortfolioContext.Provider>
