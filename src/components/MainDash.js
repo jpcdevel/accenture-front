@@ -6,6 +6,8 @@ import Stock from './Stock'
 import PortfolioItemChoose from './PortfolioItemChoose'
 
 import {PortfolioContext} from "../App";
+import Report from "./Report";
+import TestControl from "./TestControl";
 
 function MainDash () {
     const { portfolios, currentPortfolio } = useContext(PortfolioContext);
@@ -46,6 +48,8 @@ function MainDash () {
                         <Stock />
                         <Stock />
                     </div>
+                    <h1 className={"mt-4"}>Отчеты портфелей</h1>
+                    <TestControl />
                 </div>
             )}
         </div>

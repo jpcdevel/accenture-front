@@ -22,7 +22,7 @@ body {
   background: #F0F0F0;
 }
 
-h1, h2, h3, h4, h5, h6, b, button {
+h1, h2, h3, h4, h5, h6, h7, b, button {
   font-family: TTCommons-Demibold;
 }
 
@@ -31,7 +31,7 @@ p, a, b {
   font-size: 16px;
 }
 
-p, h1, h2, h3, b, a {
+p, h1, h2, h3, h6, h7, b, a {
   margin-top: 0;
   margin-bottom: 0;
 }
