@@ -1,12 +1,13 @@
 import React from 'react'
+import {Link} from "react-router-dom";
 
 function Navbar () {
     return (
         <nav className="mainNav mainContainer">
             <div>
-                <a className="menuLinks">Главная</a>
+                <Link to="/" className="menuLinks">Главная</Link>
                 <a className="menuLinks">Котировки</a>
-                <a className="menuLinks">Отчёты</a>
+                <Link to="/report" className="menuLinks">Репорт</Link>
                 <a className="menuLinks">История</a>
             </div>
             <div style={{display: 'flex', alignItems: 'center'}}>
