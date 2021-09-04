@@ -24,19 +24,9 @@ const link = from([
 ])
 
 
-const authLink = setContext((_, { headers }) => {
-    const token = localStorage.getItem('accessToken');
-    return {
-        headers: {
-            ...headers,
-            authorization: token ? `JWT ${token}` : "",
-        }
-    }
-});
-
 const client = new ApolloClient({
     cache: new InMemoryCache(),
-    link: authLink.concat(link),
+    link
 })
 
 // End Apollo

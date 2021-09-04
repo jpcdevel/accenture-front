@@ -17,10 +17,8 @@ import MainDash from './components/MainDash'
 import ScrollToTop from "./utils/ScrollToTop";
 import './static/css/App.css'
 import Loader from './components/Loader'
-import Report from "./components/Report";
 
 export const PortfolioContext = React.createContext({})
-
 
 function App() {
   const [getPortfolioById, { loading: loadingSingle }] = useLazyQuery(GET_PORTFOLIO_BY_ID, {
@@ -70,7 +68,6 @@ function App() {
           <ScrollToTop />
           <Switch>
             <Route exact path="/"><MainDash /></Route>
-            <Route exact path="/report"><Report /></Route>
           </Switch>
         </div>
       </PortfolioContext.Provider>

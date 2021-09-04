@@ -174,27 +174,10 @@ input::placeholder, textarea::placeholder {
 }
 
 .loader {
-    position: fixed;
-    top: 0;
-    display: flex;
-    justify-content: center;
-    width: 100vw;
-    margin-top: 70px;
-}
-.report {
+  position: fixed;
+  top: 0;
   display: flex;
-  align-items: center;
-}
-
-.text-report-notify{
-
-font-family: TT Commons;
-font-style: normal;
-font-weight: normal;
-font-size: 14px;
-line-height: 16px;
-/* identical to box height */
-display: flex;
-align-items: center;
-
+  justify-content: center;
+  width: 100vw;
+  margin-top: 70px;
 }
