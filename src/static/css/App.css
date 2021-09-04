@@ -171,3 +171,20 @@ input::placeholder, textarea::placeholder {
   border: none;
   padding: 5px 15px;
 }
+
+.report {
+  display: flex;
+  align-items: center;
+}
+
+.text-report-notify{
+
+font-family: TT Commons;
+font-style: normal;
+font-weight: normal;
+font-size: 14px;
+line-height: 16px;
+/* identical to box height */
+display: flex;
+align-items: center;
+}

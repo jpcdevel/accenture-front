@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import MainDash from './components/MainDash'
 import ScrollToTop from "./utils/ScrollToTop";
 import './static/css/App.css'
+import Report from "./components/Report";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <ScrollToTop />
         <Switch>
           <Route exact path="/"><MainDash /></Route>
+          <Route exact path="/report"><Report /></Route>
         </Switch>
       </div>
     </Router>
