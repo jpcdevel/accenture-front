@@ -101,12 +101,11 @@ input::placeholder, textarea::placeholder {
   display: flex;
   align-items: center;
   overflow-x: scroll;
-  max-width: 100%;
 }
 
 .addPortfolio {
-  width: 25px;
-  height: 25px;
+  min-width: 25px;
+  min-height: 25px;
   background: #fff;
   border-radius: 50%;
   display: flex;
@@ -119,6 +118,7 @@ input::placeholder, textarea::placeholder {
 
 .portfolios {
   display: flex;
+  overflow-x: scroll;
 }
 
 .portfolioItemChoose {
@@ -127,6 +127,7 @@ input::placeholder, textarea::placeholder {
   border-radius: 8px;
   cursor: pointer;
   transition: .2s;
+  min-width: 150px;
 }
 
 .activeWhite {
@@ -135,4 +136,38 @@ input::placeholder, textarea::placeholder {
 
 .portfolioItemChoose:hover {
   background: #fff;
+}
+
+.portfolioOverview {
+  width: 100%;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  padding: 50px 20px;
+}
+
+.portfolioParams {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.paramBox {
+  max-width: 120px;
+}
+
+.defaultBox {
+  margin-top: 10px;
+  background: #fff;
+  width: 100%;
+  padding: 10px;
+}
+
+.defaultBtn {
+  background: #2F8FFF;
+  color: #fff;
+  border-radius: 4px;
+  border: none;
+  padding: 5px 15px;
 }

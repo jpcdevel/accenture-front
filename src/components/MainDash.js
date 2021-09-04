@@ -1,5 +1,8 @@
 import React from 'react'
 
+import Portfolio from './Portfolio'
+import Recommendation from './Recommendation'
+import Stock from './Stock'
 import PortfolioItemChoose from './PortfolioItemChoose'
 
 function MainDash () {
@@ -14,6 +17,24 @@ function MainDash () {
                     <PortfolioItemChoose />
                     <PortfolioItemChoose />
                 </div>
+            </div>
+
+            <Portfolio />
+
+            <h1 className="mt-4">Рекомендации</h1>
+            <div className="row">
+                <Recommendation />
+                <Recommendation />
+                <Recommendation />
+                <Recommendation />
+            </div>
+
+            <h1 className="mt-4">Мой портфель</h1>
+            <div className="row">
+                <Stock />
+                <Stock />
+                <Stock />
+                <Stock />
             </div>
         </div>
     )
