@@ -6,7 +6,7 @@ import {PortfolioContext} from "./MainDash";
 
 function PortfolioItemChoose({ portfolio }) {
     const history = useHistory()
-    const { currentPortfolio } = useContext(PortfolioContext)
+    const { currentPortfolio, getPortfolioById } = useContext(PortfolioContext)
     return (
         <div
             className={currentPortfolio.id == portfolio.id ? "portfolioItemChoose activeWhite" : "portfolioItemChoose"}

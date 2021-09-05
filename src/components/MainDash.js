@@ -24,20 +24,24 @@ export const PortfolioContext = React.createContext({})
 function MainDash () {
     const history = useHistory()
     const { id } = useParams()
-    const { loading: loadingSingle, refetch: refetchGetPortfolio } = useQuery(GET_PORTFOLIO_BY_ID, {
+    const [getPortfolioById, { loading: loadingSingle, refetch: refetchGetPortfolio }] = useLazyQuery(GET_PORTFOLIO_BY_ID, {
+        onCompleted: (data) => {
+            setCurrentPortfolio(data.getPortfolioById)
+        },
+        onError: (error) => {
+            return setTimeout ((error) => {
+                toast.error('Ошибка!');
+            }, 100)
+        },
+        notifyOnNetworkStatusChange: true
+    });
+
+    const {} = useQuery(GET_PORTFOLIO_BY_ID, {
         variables: {
-            id
+          id
         },
         onCompleted: (data) => {
             setCurrentPortfolio(data.getPortfolioById)
-
-            if (localStorage.getItem("id") == "") {
-                localStorage.setItem("id", data.getPortfolioById.id)
-                window.location.reload()
-            } else if (localStorage.getItem("id") !== data.getPortfolioById.id) {
-                localStorage.setItem("id", data.getPortfolioById.id)
-                window.location.reload()
-            }
         },
         onError: (error) => {
             return setTimeout ((error) => {
@@ -85,7 +89,8 @@ function MainDash () {
         refetchGetPortfolio,
         allSecurities, setAllSecurities,
         allVolumes, setAllVolumes,
-        refetchAll
+        refetchAll,
+        getPortfolioById
     }
 
     const {loading: loadingSecurities} = useQuery(GET_ALL_SECURITIES, {
@@ -107,7 +112,11 @@ function MainDash () {
 
     const [createPortfolio, {loading: createLoading}] = useMutation(CREATE_PORTFOLIO, {
         onCompleted: (data) => {
-            history.push(`/portfolio/${data.createPortfolio.portfolio.id}`)
+            getPortfolioById({
+                variables: {
+                    id: data.createPortfolio.portfolio.id
+                }
+            })
         },
         onError: (error => {
             return setTimeout (() => {
