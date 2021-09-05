@@ -20,7 +20,7 @@ const errorLink = onError(({ graphQLErrors, networkError }) => {
 
 const link = from([
     errorLink,
-    new HttpLink({ uri: 'https://accenture-back.herokuapp.com/', credentials: 'include' }) // http://localhost:8000/graphql // https://accenture-back.herokuapp.com/
+    new HttpLink({ uri: 'https://accenture-back.herokuapp.com/graphql', credentials: 'include' }) // http://localhost:8000/graphql // https://accenture-back.herokuapp.com/
 ])
 
 
