@@ -113,7 +113,7 @@ function MainDash () {
 
     const [createPortfolio, {loading: createLoading}] = useMutation(CREATE_PORTFOLIO, {
         onCompleted: (data) => {
-            history.push(`/portfolio/${data.createPortfolio.portfolio.id}`)
+            window.location.href = `/portfolio/${data.createPortfolio.portfolio.id}`
             refetchAll()
             // getPortfolioById({
             //     variables: {

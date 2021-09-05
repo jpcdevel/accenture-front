@@ -14,7 +14,8 @@ function Redirect () {
         onCompleted: (data) => {
             if (data.getAllPortfolios.length !== 0) {
 
-                history.push(`/portfolio/${data.getAllPortfolios[0].id}`)
+                window.location.href = `/portfolio/${data.getAllPortfolios[0].id}`
+                // history.push(`/portfolio/${data.getAllPortfolios[0].id}`)
                 // getPortfolioById({
                 //     variables: {
                 //         id: data.getAllPortfolios[0].id
