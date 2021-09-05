@@ -41,6 +41,8 @@ export const GET_PORTFOLIO_BY_ID = gql`
             }
             dateCreated
             name
+            capm
+            volatility
         }
     }
 `

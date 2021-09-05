@@ -20,6 +20,7 @@
 
 body {
   background: #F0F0F0;
+  margin-bottom: 100px;
 }
 
 h1, h2, h3, h4, h5, h6, b, button {
@@ -180,4 +181,16 @@ input::placeholder, textarea::placeholder {
   justify-content: center;
   width: 100vw;
   margin-top: 70px;
+}
+
+.catBtn {
+  border: none;
+  padding: 5px 10px;
+  border-radius: 8px;
+  margin-left: 5px;
+  transition: .2s;
+}
+
+.catBtn:hover {
+  background: #fff;
 }

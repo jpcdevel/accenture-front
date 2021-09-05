@@ -1,6 +1,6 @@
 import React, {useContext} from 'react'
 
-import {PortfolioContext} from "../App";
+import {PortfolioContext} from "./MainDash";
 
 function Portfolio () {
     const { currentPortfolio } = useContext(PortfolioContext)
@@ -22,21 +22,14 @@ function Portfolio () {
                 </div>
 
                 <div className="ms-5 paramBox">
-                    <h3>{currentPortfolio.yearChange}%</h3>
-                    <p>
-                        За последний год
-                    </p>
-                </div>
-
-                <div className="ms-5 paramBox">
-                    <h3>{currentPortfolio.predictedIncome}$</h3>
+                    <h3>{currentPortfolio.predictedIncome}%</h3>
                     <p>
                         Предполагаемая доходность
                     </p>
                 </div>
 
                 <div className="ms-5 paramBox">
-                    <h3>{currentPortfolio.risk}%</h3>
+                    <h3>{currentPortfolio.risk}/100</h3>
                     <p>
                         Рискованность портфеля
                     </p>

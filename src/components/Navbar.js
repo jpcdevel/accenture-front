@@ -10,7 +10,7 @@ function Navbar () {
                 <a className="menuLinks">История</a>
             </div>
             <div style={{display: 'flex', alignItems: 'center'}}>
-                <h3>100 000₽</h3>
+                <h3 style={{color: "white"}}>100 000₽</h3>
                 <div className="circle"></div>
             </div>
         </nav>

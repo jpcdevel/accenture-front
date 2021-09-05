@@ -11,66 +11,31 @@ import { toast } from "react-hot-toast";
 
 import {GET_ALL_PORTFOLIOS} from "./GraphQL/Queries/getAllProtfolios";
 import {GET_PORTFOLIO_BY_ID} from "./GraphQL/Queries/getPortfolioById";
+import {GET_ALL_SECURITIES} from "./GraphQL/Queries/getAllSecurities";
+import {GET_ALL_VOLUMES} from "./GraphQL/Queries/getAllVolumes";
 
 import Navbar from "./components/Navbar";
 import MainDash from './components/MainDash'
 import ScrollToTop from "./utils/ScrollToTop";
 import './static/css/App.css'
 import Loader from './components/Loader'
-
-export const PortfolioContext = React.createContext({})
+import Redirect from './components/Redirect'
 
 function App() {
-  const [getPortfolioById, { loading: loadingSingle }] = useLazyQuery(GET_PORTFOLIO_BY_ID, {
-    onCompleted: (data) => {
-      setCurrentPortfolio(data.getPortfolioById)
-    },
-    onError: (error) => {
-      return setTimeout ((error) => {
-        toast.error('Ошибка!');
-      }, 100)
-    }
-  });
-
-  const {loading: loadingAll, refetch: refetchAll} = useQuery(GET_ALL_PORTFOLIOS, {
-    onCompleted: (data) => {
-        setPortfolios(data.getAllPortfolios)
-        getPortfolioById({
-          variables: {
-            id: data.getAllPortfolios[0].id
-          }
-        })
-    },
-    onError: (error) => {
-      return setTimeout ((error) => {
-        toast.error('Ошибка!');
-      }, 100)
-    }
-  })
-  const [portfolios, setPortfolios] = useState([])
-  const [currentPortfolio, setCurrentPortfolio] = useState([])
-
-  const contextValues = {
-    portfolios, setPortfolios,
-    currentPortfolio, setCurrentPortfolio,
-    getPortfolioById
-  }
 
   return (
     <Router>
-      <PortfolioContext.Provider value={contextValues}>
         <div className="App">
           <Toaster />
-          <Loader color={"#000"} loading={loadingAll} />
-          <Loader color={"#000"} loading={loadingSingle} />
+
           <Navbar />
 
           <ScrollToTop />
           <Switch>
-            <Route exact path="/"><MainDash /></Route>
+            <Route exact path="/"><Redirect /></Route>
+            <Route exact path="/portfolio/:id"><MainDash /></Route>
           </Switch>
         </div>
-      </PortfolioContext.Provider>
     </Router>
   );
 }
