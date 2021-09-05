@@ -10,7 +10,7 @@ function PortfolioItemChoose({ portfolio }) {
     return (
         <div
             className={currentPortfolio.id == portfolio.id ? "portfolioItemChoose activeWhite" : "portfolioItemChoose"}
-            onClick={() => history.push(`/portfolio/${portfolio.id}`)}
+            onClick={() => history.push(`portfolio/${portfolio.id}`)}
         >
             <img src={caseImg} alt="" width="25px"/>
             <b className="ms-2">{ portfolio.name }</b>
