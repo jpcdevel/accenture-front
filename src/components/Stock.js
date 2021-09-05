@@ -22,6 +22,7 @@ function Stock ({ isMine, security }) {
         },
         onError: (error => {
             return setTimeout (() => {
+                console.log(error)
                 toast.error('Ошибка!');
             }, 100)
         })

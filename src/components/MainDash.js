@@ -24,7 +24,7 @@ export const PortfolioContext = React.createContext({})
 function MainDash () {
     const history = useHistory()
     const { id } = useParams()
-    const [getPortfolioById, { loading: loadingSingle, refetch: refetchGetPortfolio }] = useLazyQuery(GET_PORTFOLIO_BY_ID, {
+    const [getPortfolioById, { loading: loadingSingle }] = useLazyQuery(GET_PORTFOLIO_BY_ID, {
         onCompleted: (data) => {
             setCurrentPortfolio(data.getPortfolioById)
         },
@@ -36,12 +36,13 @@ function MainDash () {
         notifyOnNetworkStatusChange: true
     });
 
-    const {} = useQuery(GET_PORTFOLIO_BY_ID, {
+    const {refetch: refetchGetPortfolio} = useQuery(GET_PORTFOLIO_BY_ID, {
         variables: {
           id
         },
         onCompleted: (data) => {
             setCurrentPortfolio(data.getPortfolioById)
+
         },
         onError: (error) => {
             return setTimeout ((error) => {
