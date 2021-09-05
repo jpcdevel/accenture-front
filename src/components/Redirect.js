@@ -13,11 +13,13 @@ function Redirect () {
     const {loading: loadingAll, refetch: refetchAll} = useQuery(GET_ALL_PORTFOLIOS, {
         onCompleted: (data) => {
             if (data.getAllPortfolios.length !== 0) {
-                getPortfolioById({
-                    variables: {
-                        id: data.getAllPortfolios[0].id
-                    }
-                })
+
+                history.push(`/portfolio/${data.getAllPortfolios[0].id}`)
+                // getPortfolioById({
+                //     variables: {
+                //         id: data.getAllPortfolios[0].id
+                //     }
+                // })
             }
         },
         onError: (error) => {

@@ -112,11 +112,12 @@ function MainDash () {
 
     const [createPortfolio, {loading: createLoading}] = useMutation(CREATE_PORTFOLIO, {
         onCompleted: (data) => {
-            getPortfolioById({
-                variables: {
-                    id: data.createPortfolio.portfolio.id
-                }
-            })
+            history.push(`/portfolio/${data.createPortfolio.portfolio.id}`)
+            // getPortfolioById({
+            //     variables: {
+            //         id: data.createPortfolio.portfolio.id
+            //     }
+            // })
         },
         onError: (error => {
             return setTimeout (() => {
