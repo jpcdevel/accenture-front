@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 import {useLazyQuery, useMutation, useQuery} from "@apollo/client";
 import {toast} from "react-hot-toast";
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory} from 'react-router-dom'
 
 import { CREATE_PORTFOLIO } from "../GraphQL/Mutations/createPortfolio";
 
@@ -22,6 +22,7 @@ export const PortfolioContext = React.createContext({})
 
 
 function MainDash () {
+    const history = useHistory()
     const { id } = useParams()
     const { loading: loadingSingle, refetch: refetchGetPortfolio } = useQuery(GET_PORTFOLIO_BY_ID, {
         variables: {
@@ -29,6 +30,14 @@ function MainDash () {
         },
         onCompleted: (data) => {
             setCurrentPortfolio(data.getPortfolioById)
+
+            if (localStorage.getItem("id") == "") {
+                localStorage.setItem("id", data.getPortfolioById.id)
+                window.location.reload()
+            } else if (localStorage.getItem("id") !== data.getPortfolioById.id) {
+                localStorage.setItem("id", data.getPortfolioById.id)
+                window.location.reload()
+            }
         },
         onError: (error) => {
             return setTimeout ((error) => {
@@ -98,7 +107,7 @@ function MainDash () {
 
     const [createPortfolio, {loading: createLoading}] = useMutation(CREATE_PORTFOLIO, {
         onCompleted: (data) => {
-            document.location.href = `/portfolio/${data.createPortfolio.portfolio.id}`
+            history.push(`/portfolio/${data.createPortfolio.portfolio.id}`)
         },
         onError: (error => {
             return setTimeout (() => {
